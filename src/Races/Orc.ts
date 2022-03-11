@@ -2,7 +2,7 @@ import Race from './Race';
 
 class Orc extends Race {
   health: number;
-  static raceCount: = 0;
+  static raceCount = 0;
   constructor(name: string, dexterity: number) {
     super(name, dexterity);
     this.health = 74;
