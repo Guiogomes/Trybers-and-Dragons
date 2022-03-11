@@ -3,9 +3,23 @@ import { EnergyType } from '../Energy';
 
 class Warrior extends Archetype {
   damage: EnergyType;
-  constructor(name: string, special: number, cost: number) {
+  static archetypeCount = 0;
+  constructor(name: string, special = 0, cost = 0) {
     super(name, special, cost);
-    this.damage = 'mana';
+    this.damage = 'stamina';
+    Warrior.addArchetype();
+  }
+
+  static addArchetype(): void {
+    this.archetypeCount += 1;
+  }
+
+  get energyType(): EnergyType {
+    return this.damage;
+  }
+
+  static createdArchetypeInstances(): number {
+    return this.archetypeCount;
   }
 }
 
