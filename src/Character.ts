@@ -68,7 +68,7 @@ export default class Character implements Fighter {
     this._lifePoints = this._maxLifePoints;
   }
 
-  // problema resolvido com ajuda de Ivanielson Cabral
+  // problema resolvido com ajuda de Ivanielson Cabral - turma 14B
   // implementação do special estava afetando a criação
   // do Character
   special(enemy: SimpleFighter) {
