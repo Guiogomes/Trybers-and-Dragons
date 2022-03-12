@@ -13,7 +13,7 @@ class Character implements Fighter {
   private _strength: number;
   private _defense: number;
   private _dexterity: number;
-  private readonly _energy: Energy;
+  private _energy: Energy;
 
   constructor(name: string) {
     // this.name = name;
