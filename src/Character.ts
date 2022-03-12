@@ -4,7 +4,7 @@ import Archetype, { Mage } from './Archetypes';
 import Energy from './Energy';
 import getRandomInt from './utils';
 
-class Character implements Fighter {
+export default class Character implements Fighter {
   // name: string;
   private _race: Race;
   private _archetype: Archetype;
@@ -68,12 +68,10 @@ class Character implements Fighter {
     this._lifePoints = this._maxLifePoints;
   }
 
-  special(enemy) {
-    this._race.name.attack(enemy);
-    this._race.name.attack(enemy);
-    this._race.name.attack(enemy);
-    this._race.name.attack(enemy);
+  // problema resolvido com ajuda de Ivanielson Cabral
+  // implementação do special estava afetando a criação
+  // do Character
+  special(enemy: SimpleFighter) {
+    enemy.receiveDamage(this._strength * 4);
   }
 }
-
-export default Character;
