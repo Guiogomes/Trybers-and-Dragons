@@ -2,9 +2,9 @@ import Battle from './Battle';
 import Fighter, { SimpleFighter } from '../Fighter';
 import Character from '../Character';
 import Monster from '../Monster';
-import getRandomInt from '../utils';
+// import getRandomInt from '../utils';
 
-const rounds: number[] = [getRandomInt(1, 10)];
+// const rounds: number[] = [getRandomInt(1, 10)];
 
 export default class PVE extends Battle {
   protected _player: Fighter;
@@ -30,17 +30,17 @@ export default class PVE extends Battle {
       defineEnemy.attack(this._player);
     }
   }
-
-  fight(): number {
-    let index = 0;
-    const enemiesLife = this._enemies
-      .every((enemy) => enemy.lifePoints !== -1); 
-    while (this.player.lifePoints !== -1
-      && enemiesLife) {
-      this.battle(rounds[index]);
-      index += 1;
-      rounds.push(getRandomInt(1, 10));
-    }
-    return this.player.lifePoints === -1 ? -1 : 1;
-  }
+  
+  // fight(): number {
+  //   let index = 0;
+  //   const enemiesLife = this._enemies
+  //     .every((enemy) => enemy.lifePoints !== -1); 
+  //   while (this.player.lifePoints !== -1
+  //     && enemiesLife) {
+  //     this.battle(rounds[index]);
+  //     index += 1;
+  //     rounds.push(getRandomInt(1, 10));
+  //   }
+  //   return this.player.lifePoints === -1 ? -1 : 1;
+  // }
 }
