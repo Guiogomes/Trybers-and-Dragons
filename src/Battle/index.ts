@@ -1,7 +1,7 @@
 import Battle from './Battle';
 import PVP from './PVP';
-import PVE from './PVE';
+// import PVE from './PVE';
 
-export { PVP, PVE };
+export { PVP };
 
 export default Battle;
