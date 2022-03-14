@@ -36,8 +36,9 @@ export default class PVE extends Battle {
   }
   
   fight(): number {
-    for (let index = 0; this._player.lifePoints !== -1
-      && this.enemy.lifePoints !== -1; index += 1) {
+    for (let index = 0;
+      this._player.lifePoints !== -1 && this.enemy.lifePoints !== -1;
+      index += 1) {
       this.battle(rounds[index]);
       rounds.push(getRandomInt(1, 10));
     }
