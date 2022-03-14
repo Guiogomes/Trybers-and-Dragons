@@ -25,13 +25,11 @@ export default class PVP extends Battle {
       this._character2.attack(this._character1);
     }
   }
-
+  
   fight(): number {
-    let index = 0;
-    while (this._character1.lifePoints !== -1
-      && this._character2.lifePoints !== -1) {
+    for (let index = 0; this._character1.lifePoints !== -1
+      && this._character2.lifePoints !== -1; index += 1) {
       this.battle(rounds[index]);
-      index += 1;
       rounds.push(getRandomInt(1, 10));
     }
     return this._character1.lifePoints === -1 ? -1 : 1;
