@@ -1,14 +1,29 @@
 import Monster from './Monster';
+import Dragon from './Dragon';
 import Character from './Character';
-import { PVP, PVE } from './Battle';
+import Battle, { PVP, PVE } from './Battle';
 
-const Ryu = new Character('');
-const Ken = new Character('');
-const Akuma = new Monster();
+const player1 = new Character('');
+const player2 = new Character('');
+const player3 = new Character('');
+const monster1 = new Monster();
+const monster2 = new Dragon();
+const pvp = new PVP(player2, player3);
+const pve = new PVE(player1, [monster1, monster2]);
 
-const fight = new PVE(Ryu, [Ken, Akuma, Ken, Akuma, Akuma, Akuma]);
-const crossover = new PVP(Ryu, Ken);
+for (let index = 1; index < 5; index += 1) player1.levelUp();
 
-console.log(fight.fight());
-console.log(crossover.fight());
-console.log(process.memoryUsage());
+const runBattles = (battles: Battle[]): void => {
+  battles.forEach((battle) => battle.fight());
+};
+
+export {
+  player1,
+  player2,
+  player3,
+  monster1,
+  monster2,
+  pvp,
+  pve,
+  runBattles,
+};
